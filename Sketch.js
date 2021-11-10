@@ -1,3 +1,4 @@
+
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -8,6 +9,7 @@ var porco1, porco2;
 var tronco1, tronco2, tronco3, tronco4;
 var bird1;
 var fundo;
+var plataforma;
 
 function preload(){
   fundo = loadImage("sprites/bg.png");
@@ -18,6 +20,7 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
+  plataforma = new Solo(150,305,300,180);	
   solo1 = new Solo(width/2, height, width, 20);
   //primeira camada
   caixa1 = new Caixa(700, 320, 70, 70);
@@ -50,6 +53,7 @@ function draw() {
   caixa2.display();
   porco1.display();
   tronco1.display();
+  plataforma.display();	
 
   caixa3.display();
   caixa4.display();
